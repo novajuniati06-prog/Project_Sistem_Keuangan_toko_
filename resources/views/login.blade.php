@@ -1,67 +1,105 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delta Finance</title>
-    
-    <link rel="stylesheet" href="{{'css/login.css' }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delta Finance Login</title>
 
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <body>
 
-<div class="container">
+  <div class="container">
 
     <!-- LEFT -->
-    <div class="left-panel">
-        <h2>Delta Finance</h2>
+    <div class="left">
 
-        <img src="{{ asset('image/logo.jpeg') }}" alt="Illustration">
+      <div class="logo-text">
+        <h1>Delta<br>Finance</h1>
+
+        <div class="line"></div>
+
+        <p>
+          Kelola keuangan bisnis Anda<br>
+          lebih mudah, aman, dan efisien
+        </p>
+      </div>
+
+      <div class="illustration">
+        <img src="{{ asset('image/img.png') }}" alt="finance illustration">
+      </div>
+
     </div>
 
+
     <!-- RIGHT -->
-    <div class="right-panel">
+    <div class="right">
 
-        <div class="icon-circle">
-            🔒
-        </div>
+      <div class="login-box">
 
-        <h3>Selamat Datang !</h3>
-        <p>Login untuk melanjutkan dan kelola keuangan Anda!</p>
+       <div class="lock-icon">
+  <i class="fa-solid fa-lock"></i>
+      </div>
 
-        <form action="/login" method="POST">
-            @csrf
+        <h2>Selamat Datang !</h2>
 
-            <div class="input-group">
-                <label>Email</label>
-                <input type="email" name="email" placeholder="Masukkan email Anda">
+        <p class="subtitle">
+          Login untuk melanjutkan dan kelola keuangan Anda!
+        </p>
+
+        <form>
+
+          <div class="input-group">
+            <label>Email</label>
+            <input type="email" placeholder="Masukkan email Anda">
+          </div>
+
+          <div class="input-group">
+            <label>Kata Sandi</label>
+            <input type="password" placeholder="Masukkan kata sandi Anda">
+          </div>
+
+          <div class="options">
+            <div class="remember">
+              <input type="checkbox">
+              <span>Ingat saya</span>
             </div>
 
-            <div class="input-group">
-                <label>Kata Sandi</label>
-                <input type="password" name="password" placeholder="Masukkan kata sandi Anda">
-            </div>
+            <a href="#">Lupa kata sandi?</a>
+          </div>
 
-            <div class="options">
-                <div>
-                    <input type="checkbox">
-                    <span>Ingat saya</span>
-                </div>
-
-                <a href="#">Lupa kata sandi?</a>
-            </div>
-
-            <button type="submit" >Login</button>
-
-            <div class="divider">
-                <span>atau masuk dengan</span>
-            </div>
+          <button type="submit" class="login-btn">
+            Login
+          </button>
 
         </form>
 
+        <div class="divider">
+          <span>atau masuk dengan</span>
+        </div>
+
+        <button class="google-btn">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="">
+          Google
+        </button>
+
+        <p class="signup">
+          Belum punya akun?
+          <a href="#">Klik disini</a>
+        </p>
+
+      </div>
+
     </div>
 
-</div>
+  </div>
 
 </body>
 </html>

@@ -1,190 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome!</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Dashboard - Delta Finance</title>
 
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 </head>
+
 <body>
 
-<div class="container">
+    <div class="dashboard-container">
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
 
-        <div class="logo">
-            <img src="{{ asset('images/logo.png') }}" alt="">
+            <!-- LOGO -->
+            <div class="logo">
+
+                <img src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png" alt="">
+
+                <div class="logo-text">
+                    <h2>Delta</h2>
+                    <h2>Finance</h2>
+                </div>
+
+            </div>
+
+            <!-- MENU -->
+            <ul class="menu">
+
+                <li class="active">
+                    <i class='bx bx-home-alt'></i>
+                    <span>Dashboard</span>
+                </li>
+
+                <li>
+                    <i class='bx bx-group'></i>
+                    <span>Mitra Bisnis</span>
+                </li>
+
+                <li>
+                    <i class='bx bx-wallet'></i>
+                    <span>Akun Keuangan</span>
+                </li>
+
+                <li>
+                    <i class='bx bx-credit-card'></i>
+                    <span>Transaksi Kas</span>
+                </li>
+
+                <li>
+                    <i class='bx bx-file'></i>
+                    <span>Laporan Keuangan</span>
+                </li>
+
+            </ul>
+
         </div>
 
-        <div class="menu">
+        <!-- MAIN -->
+        <div class="main-content">
 
-            <a href="#" class="active">Dashboard</a>
-            <a href="#">Vendor</a>
-            <a href="#">Customer</a>
-            <a href="#">Piutang</a>
-            <a href="#">Produk</a>
-            <a href="#">Invoice</a>
-            <a href="#">Transaksi Kas</a>
+            <!-- TOPBAR -->
+            <div class="topbar">
 
-        </div>
+                <div class="profile">
 
-        <div class="bottom-menu">
-            <a href="#"><i class="fa-solid fa-gear"></i> Pengaturan</a>
-            <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                    <div class="profile-header">
+
+                        <i class='bx bx-user'></i>
+
+                        <div class="profile-text">
+                            <h4>Nama</h4>
+                            <p>Administrator</p>
+                        </div>
+
+                        <i class='bx bx-chevron-down'></i>
+
+                    </div>
+
+                    <!-- DROPDOWN -->
+                    <div class="dropdown-menu">
+
+                        <a href="#">
+                            <i class='bx bx-log-out'></i>
+                            Logout
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CONTENT -->
+            <div class="content">
+
+                <h1>
+                    Welcome back,
+                    <span>(nama)</span> !
+                </h1>
+
+                <!-- CARD -->
+                <div class="cards">
+
+                    <div class="card">
+
+                        <div class="card-top">
+
+                            <div class="icon">
+                                <i class='bx bx-line-chart'></i>
+                            </div>
+
+                            <p>
+                                Transaksi Keluar Hari ini
+                            </p>
+
+                        </div>
+
+                        <h2>Rp. -</h2>
+
+                    </div>
+
+                    <div class="card">
+
+                        <div class="card-top">
+
+                            <div class="icon">
+                                <i class='bx bx-envelope'></i>
+                            </div>
+
+                            <p>
+                                Transaksi Masuk Hari ini
+                            </p>
+
+                        </div>
+
+                        <h2>Rp. -</h2>
+
+                    </div>
+
+                    <div class="card">
+
+                        <div class="card-top">
+
+                            <div class="icon">
+                                <i class='bx bx-wallet'></i>
+                            </div>
+
+                            <p>
+                                Total Transaksi Hari ini
+                            </p>
+
+                        </div>
+
+                        <h2>Rp. -</h2>
+
+                    </div>
+
+                    <div class="card">
+
+                        <div class="card-top">
+
+                            <div class="icon">
+                                <i class='bx bx-credit-card'></i>
+                            </div>
+
+                            <p>
+                                Total Transaksi Keseluruhan
+                            </p>
+
+                        </div>
+
+                        <h2>Rp. -</h2>
+
+                    </div>
+
+                </div>
+
+                <!-- CHART -->
+                <div class="chart-box">
+
+                    <h3>Ringkasan Bulan ini</h3>
+
+                    <div class="legend">
+
+                        <div class="legend-item">
+
+                            <div class="circle green"></div>
+
+                            <span>Transaksi Masuk</span>
+
+                        </div>
+
+                        <div class="legend-item">
+
+                            <div class="circle pink"></div>
+
+                            <span>Transaksi Keluar</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>
-
-    <!-- MAIN -->
-    <div class="main-content">
-
-        <!-- TOPBAR -->
-        <div class="topbar">
-
-            <h1>Welcome back, (nama) !</h1>
-
-            <div class="profile">
-                <i class="fa-regular fa-user"></i>
-
-                <div>
-                    <h4>Nama</h4>
-                    <p>Administrator</p>
-                </div>
-
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-
-        </div>
-
-        <!-- CARDS -->
-        <div class="cards">
-
-            <div class="card">
-                <div class="card-top">
-                    <i class="fa-solid fa-chart-line"></i>
-                    <span>Transaksi Keluar Hari ini</span>
-                </div>
-
-                <h2>Rp. -</h2>
-            </div>
-
-            <div class="card">
-                <div class="card-top">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>Transaksi Masuk Hari ini</span>
-                </div>
-
-                <h2>Rp. -</h2>
-            </div>
-
-            <div class="card">
-                <div class="card-top">
-                    <i class="fa-solid fa-wallet"></i>
-                    <span>Total Transaksi Hari ini</span>
-                </div>
-
-                <h2>Rp. -</h2>
-            </div>
-
-            <div class="card">
-                <div class="card-top">
-                    <i class="fa-solid fa-wallet"></i>
-                    <span>Total Transaksi Keseluruhan</span>
-                </div>
-
-                <h2>Rp. -</h2>
-            </div>
-
-        </div>
-
-        <!-- CONTENT -->
-        <div class="content-grid">
-
-            <div class="box">
-                <h3>Customer</h3>
-
-                <div class="row">
-                    <span>Jumlah Customer</span>
-                    <span>10</span>
-                </div>
-
-                <div class="row">
-                    <span>Rata Rata permintaan</span>
-                    <span>1000/cust</span>
-                </div>
-
-                <div class="row bottom">
-                    <span>Terakhir Diedit</span>
-                    <span>1/1/2026</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <h3>Piutang</h3>
-
-                <div class="row">
-                    <span>Total Piutang</span>
-                    <span>Rp -</span>
-                </div>
-
-                <div class="row">
-                    <span>Total Jatuh Tempo terdekat (1 bulan)</span>
-                    <span>Rp -</span>
-                </div>
-
-                <div class="row bottom">
-                    <span>Terakhir Diedit</span>
-                    <span>1/1/2026</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <h3>Kategori Pengeluaran</h3>
-
-                <div class="row">
-                    <span>Saldo Awal</span>
-                    <span>Rp -</span>
-                </div>
-
-                <div class="row">
-                    <span>Total Masuk</span>
-                    <span>Rp -</span>
-                </div>
-
-                <div class="row">
-                    <span>Total Keluar</span>
-                    <span>Rp -</span>
-                </div>
-
-                <div class="row bottom">
-                    <span>Saldo Akhir</span>
-                    <span>Rp -</span>
-                </div>
-            </div>
-
-            <div class="box">
-                <h3>Stok dan Produk</h3>
-
-                <div class="row">
-                    <span>Total Produk</span>
-                    <span>156</span>
-                </div>
-
-                <div class="row">
-                    <span>Stok Menipis</span>
-                    <span>12 Produk</span>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
 
 </body>
 </html>

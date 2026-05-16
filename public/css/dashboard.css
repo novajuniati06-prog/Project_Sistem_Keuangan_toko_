@@ -1,181 +1,281 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-body{
-    background: #bfeeee;
+body {
+    background: #edf1f7;
+    overflow: hidden;
 }
 
-.container{
+/* CONTAINER */
+
+.dashboard-container {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 /* SIDEBAR */
 
-.sidebar{
-    width: 240px;
-    background: #97a4b3;
-    padding: 25px 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.logo{
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.logo img{
-    width: 60px;
-    border-radius: 15px;
-}
-
-.menu{
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.menu a{
-    text-decoration: none;
+.sidebar {
+    width: 220px;
+    background: linear-gradient(180deg, #17389c 0%, #3461ff 100%);
+    padding: 18px 14px;
     color: white;
-    padding: 14px 18px;
-    border: 1px solid #c9d1da;
-    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.logo img {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+.logo-text h2 {
     font-size: 15px;
+    line-height: 1.1;
 }
 
-.menu a.active{
-    background: white;
-    color: #46b9b4;
+/* MENU */
+
+.menu {
+    list-style: none;
 }
 
-.bottom-menu{
-    border: 1px solid #d8dde3;
-    border-radius: 15px;
-    padding: 15px;
+.menu li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
 }
 
-.bottom-menu a{
-    display: block;
-    text-decoration: none;
-    color: white;
-    margin: 12px 0;
+.menu li i {
+    font-size: 20px;
+}
+
+.menu li.active {
+    background: #3461ff;
+}
+
+.menu li:hover {
+    background: rgba(255, 255, 255, 0.12);
 }
 
 /* MAIN */
 
-.main-content{
+.main-content {
     flex: 1;
-    background: #f7f7f7;
-    padding: 25px;
+    padding: 16px 20px;
 }
 
 /* TOPBAR */
 
-.topbar{
+.topbar {
+    width: 100%;
+    height: 70px;
+    background: white;
+    border-radius: 14px;
+    padding: 0 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 18px;
 }
 
-.topbar h1{
-    color: #66bebe;
-    font-size: 35px;
-}
+/* PROFILE */
 
-.profile{
+.profile {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 12px;
 }
 
-.profile h4{
-    color: #f3c457;
-}
-
-.profile p{
-    color: gray;
-    font-size: 14px;
-}
-
-/* CARDS */
-
-.cards{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.card{
-    background: #add8de;
-    padding: 18px;
-    border-radius: 12px;
-}
-
-.card-top{
+.profile-header {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 20px;
+    cursor: pointer;
 }
 
-.card-top i{
-    width: 40px;
-    height: 40px;
-    background: #4ec2bd;
-    color: white;
-    border-radius: 50%;
+.profile-header i {
+    font-size: 20px;
+    color: #3461ff;
+}
+
+.profile-text h4 {
+    font-size: 13px;
+    color: #111827;
+}
+
+.profile-text p {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+/* DROPDOWN */
+
+.dropdown-menu {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 140px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    padding: 8px;
+    display: none;
+    z-index: 100;
+}
+
+.dropdown-menu a {
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-.card-top span{
-    color: white;
-    font-weight: bold;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #374151;
     font-size: 14px;
+    transition: 0.3s;
 }
 
-.card h2{
-    color: white;
+.dropdown-menu a:hover {
+    background: #f3f4f6;
+}
+
+.dropdown-menu a i {
+    font-size: 18px;
+    color: #3461ff;
+}
+
+/* SHOW DROPDOWN */
+
+.profile:hover .dropdown-menu {
+    display: block;
 }
 
 /* CONTENT */
 
-.content-grid{
+.content h1 {
+    font-size: 28px;
+    color: #64748b;
+    margin-bottom: 18px;
+}
+
+.content h1 span {
+    color: #3461ff;
+}
+
+/* CARDS */
+
+.cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 14px;
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #3461ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon i {
+    color: white;
+    font-size: 18px;
+}
+
+.card-top p {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    line-height: 1.3;
+}
+
+.card h2 {
+    font-size: 24px;
+    color: #111827;
+}
+
+/* CHART */
+
+.chart-box {
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    height: 300px;
+}
+
+.chart-box h3 {
+    font-size: 15px;
+    color: #64748b;
+    margin-bottom: 24px;
+}
+
+.legend {
+    display: flex;
+    flex-direction: column;
     gap: 18px;
 }
 
-.box{
-    background: #c6e1e5;
-    padding: 20px;
-    border-radius: 12px;
-}
-
-.box h3{
-    margin-bottom: 30px;
-    color: #4b4b4b;
-}
-
-.row{
+.legend-item {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 18px;
-    color: #4bbcbc;
-    border-bottom: 1px solid #d6eeee;
-    padding-bottom: 10px;
+    align-items: center;
+    gap: 10px;
 }
 
-.row.bottom{
-    margin-top: 40px;
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.green {
+    background: #a7f3d0;
+}
+
+.pink {
+    background: #fbcfe8;
+}
+
+.legend-item span {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
 }
